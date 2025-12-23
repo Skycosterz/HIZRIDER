@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 24 100% 60%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 240 10% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 10% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 24 100% 60%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 16%;
+    --ring: 24 100% 60%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  .cyber-card {
+    @apply bg-gradient-to-br from-card to-card/80 border border-border/50 backdrop-blur-sm;
+  }
+
+  .cyber-button {
+    @apply bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300;
+  }
+
+  .cyber-text {
+    @apply font-mono tracking-wider;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Leaflet custom styling */
+  .leaflet-container {
+    background: hsl(var(--background)) !important;
+  }
+
+  .leaflet-control-zoom {
+    display: none !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: hsl(var(--card)) !important;
+    color: hsl(var(--foreground)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: var(--radius) !important;
+  }
+
+  .leaflet-popup-tip {
+    background: hsl(var(--card)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+  }
+
+  .custom-div-icon {
+    background: transparent !important;
+    border: none !important;
+  }
+}
